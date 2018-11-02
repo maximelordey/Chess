@@ -1,0 +1,13 @@
+1540565664271	Rename type 'Pion'
+1540565677829	Rename package 'pion'
+1540565889206	Rename type 'mouve'
+1540566156320	Rename type 'Mouve'
+1540566164749	Rename field 'm_mouves'
+1540567738687	Move compilation unit
+1540590425577	Rename package 'gameUI.UI'
+1540657983308	Delete element
+1540660362757	Rename type 'Kill_one_diagonal'
+1540666470709	Rename package 'mouve'
+1540666480963	Rename package 'mouv'
+1540731921721	Rename field 'trigger'
+1540731930302	Rename field 'focus'

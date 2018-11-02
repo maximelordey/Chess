@@ -1,0 +1,18 @@
+package piece;
+
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+import mouve.Move_devant;
+
+public class Pion extends Piece{
+
+	public Pion(Couleur couleur, Case case_courante) {
+		super(new Vector<Move>(1), couleur, case_courante);
+		// TODO Auto-generated constructor stub
+		this.m_moves.add(new Move_devant());
+	}
+
+}

@@ -1,0 +1,90 @@
+package chess;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import piece.Piece;
+
+public class Case {
+	public static final int SIZE = 40;
+	public static final Color MARRON_CLAIR = new Color(153, 102, 0);
+	public static final Color MARRON_FONCE = new Color(102, 51, 0);
+
+	private final Position m_position;
+	private Piece m_pion;
+	public boolean m_trigger;
+	public boolean m_focus;
+
+	public Case(Position position) {
+		m_position = position;
+		m_trigger = false;
+		m_focus = false;
+	}
+
+	public Position getPosition() {
+		return m_position;
+	}
+
+	public boolean addPion(Piece pion) {
+		if (m_pion == null) {
+			m_pion = pion;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public Piece removePion() {
+		Piece current_pion = m_pion;
+		m_pion = null;
+		return current_pion;
+	}
+
+	public boolean isUsed() {
+		return m_pion != null;
+	}
+
+	public void paint(Graphics g) {
+		int x_abs = m_position.m_colonne * SIZE;
+		int y_abs = m_position.m_ligne * SIZE;
+		
+		
+
+		if ((m_position.m_colonne + m_position.m_ligne) % 2 == 0) {
+			g.setColor(MARRON_CLAIR);
+		} else {
+			g.setColor(MARRON_FONCE);
+		}
+
+		g.fillRect(x_abs, y_abs, SIZE, SIZE);
+
+		if (m_trigger) {
+			g.setColor(Color.CYAN);
+			g.fillRect(x_abs+3, y_abs+3, SIZE-6, SIZE-6);
+		}
+		
+		if (m_focus) {
+			g.setColor(Color.LIGHT_GRAY);
+			g.fillRect(x_abs+3, y_abs+3, SIZE-6, SIZE-6);
+		}
+		
+		if (m_pion != null) {
+			m_pion.paint(g, x_abs, y_abs);
+		}
+	}
+
+	public String toString() {
+		String string = "Case " + m_position.m_ligne + ":" + m_position.m_colonne;
+		if (isUsed()) {
+			string += " " + m_pion.toString();
+		} else {
+			string += " rien";
+		}
+		return string;
+	}
+
+	public Piece getPion() {
+		// TODO Auto-generated method stub
+		return m_pion;
+	}
+}

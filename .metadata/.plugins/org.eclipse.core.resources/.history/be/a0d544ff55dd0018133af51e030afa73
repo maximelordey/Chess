@@ -1,0 +1,17 @@
+package move;
+
+import chess.Case;
+import chess.Echiquier;
+import chess.Position;
+import piece.Piece;
+
+public abstract class Move {
+	
+	protected Echiquier m_echiquier;
+	
+	public Move(Echiquier echiquier) {
+		m_echiquier=echiquier;
+	}
+
+	public abstract boolean canmove(Piece piece,Case next_case);
+}

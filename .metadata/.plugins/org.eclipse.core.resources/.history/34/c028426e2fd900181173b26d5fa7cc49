@@ -1,0 +1,5 @@
+package mouve;
+
+public interface mouve {
+
+}

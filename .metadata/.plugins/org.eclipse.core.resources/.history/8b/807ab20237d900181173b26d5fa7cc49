@@ -1,0 +1,11 @@
+package mouve;
+
+import chess.Position;
+import piece.Piece;
+
+public class Move {
+
+	public static boolean devant(Piece piece,Position next_position) {
+		
+	}
+}

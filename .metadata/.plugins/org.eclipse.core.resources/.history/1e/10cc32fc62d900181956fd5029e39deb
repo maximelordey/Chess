@@ -1,0 +1,49 @@
+package piece;
+
+import java.awt.Graphics;
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+
+public abstract class Piece {
+
+	protected Vector<Move> m_moves;
+	protected Couleur m_couleur;
+	public Boolean m_first_move;
+	public Case m_case_courante;
+
+	public Piece(Couleur couleur, Case case_courante) {
+		m_moves = new Vector<Move>();
+		m_couleur = couleur;
+		m_case_courante = case_courante;
+		m_first_move = false;
+	}
+
+	public Couleur getCouleur() {
+		return m_couleur;
+	}
+
+	public boolean move(Case nextCase) {
+		boolean move = canmove(nextCase);
+		if (move && nextCase.addPion(this)) {
+			m_case_courante.removePion();
+			m_case_courante = nextCase;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean canmove(Case nextCase) {
+		boolean canmove = false;
+		for (Move move : m_moves) {
+			canmove = canmove || move.canmove(this, nextCase.m_position);
+		}
+		return canmove;
+	}
+
+	public abstract void paint(Graphics g);
+
+}

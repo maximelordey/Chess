@@ -1,0 +1,37 @@
+package move;
+
+import chess.Case;
+import chess.Couleur;
+import chess.Echiquier;
+import chess.Position;
+import piece.Piece;
+
+public class Move_diagonal extends Move{
+
+	public Move_diagonal(Echiquier echiquier) {
+		super(echiquier);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean canmove(Piece piece, Case next_case) {
+		// TODO Auto-generated method stub
+		boolean canmove = false;
+		Position current_pos = piece.m_case_courante.getPosition();
+		
+		int diff_ligne= Math.abs(next_case.getPosition().m_ligne-current_pos.m_ligne);
+		int diff_colonne=Math.abs(next_case.getPosition().m_colonne-current_pos.m_colonne);
+		
+		
+		boolean condition_1=diff_ligne == diff_colonne;
+		boolean condition_2= !next_case.isUsed() || (next_case.isUsed() && next_case.getPion().getCouleur() != piece.getCouleur());
+		
+		if (condition_1 && condition_2) {
+			return true;
+		}else {
+			return false;
+		}
+
+	}
+
+}

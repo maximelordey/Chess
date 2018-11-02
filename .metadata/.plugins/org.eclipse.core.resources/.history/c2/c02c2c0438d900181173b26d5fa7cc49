@@ -1,0 +1,7 @@
+package mouve;
+
+
+public interface Move {
+
+	public boolean move();
+}

@@ -1,0 +1,6 @@
+package mouve;
+
+public class Move {
+
+	public static boolean Devant(Piece piece,int e_ligne, int e_colonne);
+}

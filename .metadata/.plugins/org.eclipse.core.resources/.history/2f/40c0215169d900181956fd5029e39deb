@@ -1,0 +1,15 @@
+package gameUI.mvc;
+
+import java.awt.Graphics;
+
+import gameUI.framework.GameView;
+
+public class View extends GameView{
+
+	@Override
+	protected void _paint(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

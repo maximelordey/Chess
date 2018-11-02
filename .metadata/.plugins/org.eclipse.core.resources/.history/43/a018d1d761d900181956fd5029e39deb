@@ -1,0 +1,16 @@
+package piece;
+
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+
+public class Cavalier extends Piece{
+
+	public Cavalier(Vector<Move> moves, Couleur couleur, Case case_courante) {
+		super(moves, couleur, case_courante);
+		// TODO Auto-generated constructor stub
+	}
+
+}

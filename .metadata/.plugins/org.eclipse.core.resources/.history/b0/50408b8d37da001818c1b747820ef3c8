@@ -1,0 +1,10 @@
+package move;
+
+import chess.Case;
+import chess.Position;
+import piece.Piece;
+
+public abstract class Move {
+
+	public boolean canmove(Piece piece,Case next_case);
+}

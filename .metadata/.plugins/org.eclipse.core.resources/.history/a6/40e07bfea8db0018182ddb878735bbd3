@@ -1,0 +1,20 @@
+package move;
+
+import chess.Case;
+import chess.Echiquier;
+import piece.Piece;
+
+public class Move_Front2 extends Move{
+
+	public Move_Front2(Echiquier echiquier) {
+		super(echiquier);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean canmove(Piece piece, Case next_case) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,23 @@
+package mouv;
+
+import chess.Case;
+import chess.Position;
+import piece.Piece;
+
+public class Move_one_step implements Move{
+
+	@Override
+	public boolean canmove(Piece piece,Case next_case) {
+		Position current_pos = piece.m_case_courante.getPosition();
+		
+		int diff_ligne= Math.abs(next_case.getPosition().m_ligne-current_pos.m_ligne);
+		int diff_colonne=Math.abs(next_case.getPosition().m_colonne-current_pos.m_colonne);
+		
+		if (diff_ligne<=1  && diff_colonne<=1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+}

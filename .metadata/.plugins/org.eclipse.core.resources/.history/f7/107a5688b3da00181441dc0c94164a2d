@@ -1,0 +1,83 @@
+package gameUI.mvc;
+
+import java.awt.Point;
+import java.awt.event.MouseEvent;
+
+import chess.Case;
+import chess.Echiquier;
+import gameUI.framework.GameController;
+import piece.Piece;
+
+public class Controller extends GameController{
+
+	private Model model;
+	private Piece currentPiece;
+	
+	public Controller(Model model) {
+		this.model=model;
+	}
+	
+	@Override
+	public void notifyVisible() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void step(long now) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		Echiquier echiquier = model.getEchiquier();
+		Point current = e.getLocationOnScreen();
+		
+		int ligne = (int) ((current.y-244)/Case.SIZE);
+		int colonne = (int) ((current.x-594)/Case.SIZE);
+		
+		Case caseCourante = echiquier.getCase(ligne,colonne);		
+		if (currentPiece != null) {
+			currentPiece.m_case_courante.m_focus=false;
+			if (caseCourante != null) {
+				currentPiece.move(caseCourante);
+			}
+			currentPiece=null;
+			echiquier.setTriggerFalse();
+		}else {
+			if (caseCourante != null) {
+				currentPiece = caseCourante.getPion();
+				if (currentPiece != null) {
+					caseCourante.m_focus=true;
+				}
+				echiquier.setTriggerTrue(currentPiece);
+			}
+		}
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

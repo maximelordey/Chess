@@ -1,0 +1,35 @@
+package piece;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+import mouve.Move_Cheval;
+
+public class Cavalier extends Piece{
+	
+	private static final BufferedImage IMAGE_WHITE;
+
+	public Cavalier(Couleur couleur, Case case_courante) {
+		super(couleur, case_courante);
+		// TODO Auto-generated constructor stub
+		this.m_moves.addElement(new Move_Cheval());
+	}
+
+	@Override
+	public void paint(Graphics g, int x_abs, int y_abs) {
+		// TODO Auto-generated method stub
+		g.setColor(Color.RED);
+		g.fillRect(x_abs+10, y_abs+10, 20, 20);
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Cavalier";
+	}
+
+}

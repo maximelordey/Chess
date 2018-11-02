@@ -1,0 +1,13 @@
+package piece;
+
+import java.awt.Graphics;
+
+public class Roi extends Piece{
+
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

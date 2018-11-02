@@ -1,0 +1,29 @@
+import chess.Couleur;
+import chess.Echiquier;
+
+public class Game {
+
+	private Echiquier m_echiquier;
+	private Couleur m_current_player;
+	
+	public Game() {
+		m_echiquier = new Echiquier();
+		m_current_player= Couleur.WHITE;
+	}
+	
+	public void changePlayer() {
+		if (m_current_player == Couleur.WHITE) {
+			m_current_player = Couleur.BLACK;
+		}else {
+			m_current_player = Couleur.WHITE;
+		}
+	}
+
+	public final Couleur getPlayer() {
+		return m_current_player;
+	}
+	
+	
+	
+	
+}

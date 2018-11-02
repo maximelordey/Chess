@@ -1,0 +1,19 @@
+package gameUI.mvc;
+
+import gameUI.framework.GameModel;
+
+public class Model extends GameModel{
+
+	@Override
+	public void step(long now) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void shutdown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

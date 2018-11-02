@@ -1,0 +1,24 @@
+package gameUI.mvc;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import chess.Echiquier;
+import gameUI.framework.GameView;
+
+public class View extends GameView{
+	private Model model;
+	
+	public View(Model model) {
+		this.model=model;
+	}
+	@Override
+	protected void _paint(Graphics g) {
+		// TODO Auto-generated method stub
+		g.setColor(Color.LIGHT_GRAY);
+		g.fillRect(0, 0, 800, 600);
+		Echiquier echiquier = model.getGame().getEchiquier();
+		echiquier.paint(g);
+	}
+
+}

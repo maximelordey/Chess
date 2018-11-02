@@ -1,0 +1,10 @@
+package mouv;
+
+import chess.Case;
+import chess.Position;
+import piece.Piece;
+
+public interface Move {
+
+	public boolean canmove(Piece piece,Case next_case);
+}

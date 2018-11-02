@@ -1,0 +1,60 @@
+package move;
+
+import chess.Case;
+import chess.Echiquier;
+import chess.Position;
+import piece.Piece;
+
+public class Move_Ligne extends Move {
+
+	public Move_Ligne(Echiquier echiquier) {
+		super(echiquier);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean canmove(Piece piece, Case next_case) {
+		// TODO Auto-generated method stub
+		Position current_pos = piece.m_case_courante.getPosition();
+
+		int diff_ligne = next_case.getPosition().m_ligne - current_pos.m_ligne;
+		int diff_colonne = next_case.getPosition().m_colonne - current_pos.m_colonne;
+
+		boolean condition_1 = diff_ligne == 0 || diff_colonne == 0;
+		boolean condition_2 = !next_case.isUsed()
+				|| (next_case.isUsed() && next_case.getPion().getCouleur() != piece.getCouleur());
+
+		int i;
+		if (condition_1 && condition_2) {
+			if (diff_ligne == 0) {
+				if (diff_colonne > 0) {
+					
+				} else {
+					i=current_pos.m_colonne-1;
+					while(i>next_case.getPosition().m_ligne && !this.m_echiquier.getCase(i, current_pos.m_colonne).isUsed()) {
+						i--;
+					}
+					return i==next_case.getPosition().m_ligne;
+				}
+			} else {
+				if (diff_ligne > 0) {
+					i=current_pos.m_ligne+1;
+					while(i<next_case.getPosition().m_ligne && !this.m_echiquier.getCase(i, current_pos.m_colonne).isUsed()) {
+						i++;
+					}
+					return i==next_case.getPosition().m_ligne;
+				} else {
+					i=current_pos.m_ligne-1;
+					while(i>next_case.getPosition().m_ligne && !this.m_echiquier.getCase(i, current_pos.m_colonne).isUsed()) {
+						i--;
+					}
+					return i==next_case.getPosition().m_ligne;
+				}
+			}
+			return false;
+		} else {
+			return false;
+		}
+	}
+
+}

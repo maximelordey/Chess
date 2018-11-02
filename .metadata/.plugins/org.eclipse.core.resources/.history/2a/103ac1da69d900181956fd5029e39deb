@@ -1,0 +1,18 @@
+package gameUI.mvc;
+
+import java.awt.Graphics;
+
+import gameUI.framework.GameView;
+
+public class View extends GameView{
+	private Model model;
+	
+	public View(Model model) {
+		this.model=model;
+	}
+	@Override
+	protected void _paint(Graphics g) {
+		// TODO Auto-generated method stub
+	}
+
+}

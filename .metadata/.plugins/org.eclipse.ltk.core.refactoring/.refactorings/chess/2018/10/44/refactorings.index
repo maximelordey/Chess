@@ -1,0 +1,9 @@
+1541025451851	Rename type 'Cavalier'
+1541025466715	Rename type 'Fou'
+1541025481824	Rename type 'Pion'
+1541025489157	Rename type 'Reine'
+1541025496284	Rename type 'Roi'
+1541025504275	Rename type 'Tour'
+1541026104106	Rename enum constant 'BLANC'
+1541026111184	Rename enum constant 'NOIR'
+1541027296851	Move compilation units

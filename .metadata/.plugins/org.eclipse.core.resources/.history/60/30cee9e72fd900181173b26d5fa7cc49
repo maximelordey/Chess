@@ -1,0 +1,6 @@
+package mouve;
+
+public interface Mouve {
+
+	public boolean canGo(int ligne, int colonne);
+}

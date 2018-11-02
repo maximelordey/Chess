@@ -1,0 +1,43 @@
+package move;
+
+import chess.Case;
+import chess.Echiquier;
+import chess.Position;
+import piece.Piece;
+import piece.Pion;
+
+public class Move_one_step extends Move{
+
+	public Move_one_step(Echiquier echiquier) {
+		super(echiquier);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean canmove(Piece piece,Case next_case) {
+		
+		Piece pion = next_case.getPion();
+		
+		if (pion != null && pion.getCouleur() == piece.getCouleur()) {
+			return false;
+		}
+		
+		
+		
+		
+		
+		Position current_pos = piece.m_case_courante.getPosition();
+		
+		int diff_ligne= Math.abs(next_case.getPosition().m_ligne-current_pos.m_ligne);
+		int diff_colonne=Math.abs(next_case.getPosition().m_colonne-current_pos.m_colonne);
+		
+		
+		
+		if (diff_ligne<=1  && diff_colonne<=1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+}

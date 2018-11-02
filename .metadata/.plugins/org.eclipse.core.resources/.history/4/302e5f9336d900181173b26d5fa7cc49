@@ -1,0 +1,8 @@
+package mouve;
+
+import piece.Piece;
+
+public class Move {
+
+	
+}

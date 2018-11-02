@@ -1,0 +1,22 @@
+package gameUI.mvc;
+
+import chess.Echiquier;
+import gameUI.framework.GameModel;
+
+public class Model extends GameModel{
+
+	private Echiquier echiquier;
+	
+	@Override
+	public void step(long now) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void shutdown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

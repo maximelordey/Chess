@@ -1,0 +1,25 @@
+package piece;
+
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import chess.Echiquier;
+import mouve.Move;
+
+public abstract class Piece {
+	
+	private Vector<Move> m_moves;
+	private Couleur m_couleur;
+	public Boolean m_first_move;
+	public Case m_case_courante;
+	
+	public Piece(Vector<Move> moves,Couleur m_couleur,Case case_courante) {
+		m_moves=moves;
+		m_case_courante=case_courante;
+		m_first_move=false;
+	}
+	
+	
+	
+}

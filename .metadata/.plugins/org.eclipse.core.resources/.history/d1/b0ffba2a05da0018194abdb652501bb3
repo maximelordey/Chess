@@ -1,0 +1,34 @@
+package piece;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+import mouve.Move_one_step;
+
+public class Roi extends Piece{
+
+	public Roi(Couleur couleur, Case case_courante) {
+		super(couleur, case_courante);
+		// TODO Auto-generated constructor stub
+		this.m_moves.add(new Move_one_step());
+	}
+
+	@Override
+	public void paint(Graphics g, int x_abs, int y_abs) {
+		// TODO Auto-generated method stub
+
+		g.setColor(Color.BLACK);
+		g.fillRect(x_abs+10, y_abs+10, 20, 20);
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Roi";
+	}
+
+}

@@ -1,0 +1,33 @@
+package piece;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+
+public class Fou extends Piece{
+
+	public Fou(Couleur couleur, Case case_courante) {
+		super( couleur, case_courante);
+		// TODO Auto-generated constructor stub
+		this.m_moves.add(new Move_diagonal());
+	}
+
+	@Override
+	public void paint(Graphics g, int x_abs, int y_abs) {
+		// TODO Auto-generated method stub
+		g.setColor(Color.CYAN);
+		g.fillRect(x_abs+10, y_abs+10, 20, 20);
+		
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Fou";
+	}
+
+}

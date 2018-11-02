@@ -1,0 +1,48 @@
+package move;
+
+import chess.Case;
+import chess.Echiquier;
+import chess.Position;
+import piece.Piece;
+
+public class Move_Ligne extends Move{
+
+public Move_Ligne(Echiquier echiquier) {
+		super(echiquier);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public boolean canmove(Piece piece, Case next_case) {
+		// TODO Auto-generated method stub
+		Position current_pos = piece.m_case_courante.getPosition();
+		
+		int diff_ligne=Math.abs(next_case.getPosition().m_ligne-current_pos.m_ligne);
+		int diff_colonne=Math.abs(next_case.getPosition().m_colonne-current_pos.m_colonne);
+		
+		int i;
+		int j;
+		if ( diff_colonne==0) {
+
+			i=0;
+			while (i<diff_ligne && !this.m_echiquier.getCase(current_pos.m_ligne+i, current_pos.m_colonne).isUsed()) {
+				i++;
+			}
+			
+			return i<diff_ligne && (!next_case.isUsed() || next_case.getPion().getCouleur() != piece.getCouleur());
+			
+		}else if(diff_ligne==0) {
+			
+			j=0;
+			while (j<diff_colonne && !this.m_echiquier.getCase(current_pos.m_ligne, current_pos.m_colonne+j).isUsed()) {
+				j++;
+			}
+			
+			return i<diff_colonne && (!next_case.isUsed() || next_case.getPion().getCouleur() != piece.getCouleur());
+			
+		}else {
+			return false;
+		}
+	}
+
+}

@@ -1,0 +1,9 @@
+package mouve;
+
+import chess.Position;
+import piece.Piece;
+
+public interface Move {
+
+	public static boolean canmove(Piece piece,Position next_position);
+}

@@ -1,0 +1,21 @@
+package mouve;
+
+import chess.Couleur;
+import chess.Position;
+import piece.Piece;
+
+public class Move {
+
+	public static boolean devant(Piece piece,Position next_position) {
+		Position current_pos = piece.m_case_courante.m_position;
+		
+		int diff_ligne=next_position.m_ligne-current_pos.m_ligne;
+		int diff_colonne=next_position.m_colonne-current_pos.m_colonne;
+		
+		if (piece.getCouleur() == Couleur.BLANC) {
+			return diff_ligne==0 && diff_colonne==-1;
+		}else {
+			return diff_ligne==0 && diff_colonne==1;
+		}
+	}
+}

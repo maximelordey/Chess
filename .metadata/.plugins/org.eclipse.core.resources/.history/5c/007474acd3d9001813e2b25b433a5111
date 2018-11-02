@@ -1,0 +1,5 @@
+package mouve;
+
+public class Move_diagonal implements Move{
+
+}

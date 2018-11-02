@@ -1,0 +1,23 @@
+package piece;
+
+import java.awt.Graphics;
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+
+public class Tour extends Piece{
+
+	public Tour(Vector<Move> moves, Couleur couleur, Case case_courante) {
+		super(couleur, case_courante);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

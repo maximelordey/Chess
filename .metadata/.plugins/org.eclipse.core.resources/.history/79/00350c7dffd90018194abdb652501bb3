@@ -1,0 +1,14 @@
+package mouve;
+
+import chess.Case;
+import piece.Piece;
+
+public class Move_Cheval implements Move{
+
+	@Override
+	public boolean canmove(Piece piece, Case next_case) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

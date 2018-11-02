@@ -1,0 +1,29 @@
+package piece;
+
+import java.awt.Graphics;
+import java.util.Vector;
+
+import chess.Case;
+import chess.Couleur;
+import mouve.Move;
+
+public class Reine extends Piece{
+
+	public Reine(Couleur couleur, Case case_courante) {
+		super( couleur, case_courante);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void paint(Graphics g, int x_abs, int y_abs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
