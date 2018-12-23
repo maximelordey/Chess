@@ -8,9 +8,7 @@ import chess.Couleur;
 import move.Move;
 
 public abstract class Piece {
-	
-	
-	
+	// commentaire test"
 	
 	public static final int IMGSIZE=21;
 
